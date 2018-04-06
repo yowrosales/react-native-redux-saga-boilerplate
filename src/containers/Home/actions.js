@@ -1,7 +1,8 @@
 import {
     LOGIN,
     LOGIN_ERROR,
-    LOGIN_OK
+    LOGIN_OK,
+    AUTH0_LOGIN
   } from './constants'
   
   export const login = (email, password) => {
@@ -26,3 +27,9 @@ import {
     }
   }
   
+  export function authLogin (connection) {
+    return {
+      type: AUTH0_LOGIN,
+      connection
+    }
+  }

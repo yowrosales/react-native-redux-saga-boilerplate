@@ -1,7 +1,8 @@
 import {
     LOGIN,
     LOGIN_OK,
-    LOGIN_ERROR
+    LOGIN_ERROR,
+    AUTH0_LOGIN
   } from './constants'
   
   const defaultState = {
@@ -33,6 +34,12 @@ import {
           error: action.error.error,
           errors: action.error.errors,
           user: null
+        })
+      case AUTH0_LOGIN:
+        console.log('reducer', action)
+        return Object.assign({}, state, {
+          isLoading: true,
+          data: null
         })
       default:
         return state
